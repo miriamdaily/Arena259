@@ -7,3 +7,6 @@ We can add random events to make certain abilities more or less effective. It do
 
 # Buff Debuff Class
 add a buff/debuff class that stores any modifiers that will be added to a creature.
+
+# Agent Class
+Gets called at specific points in a battle: when a player is getting too powerful, a villain can automatically called to the battle; or Helper classes which assist players who are doing poorly like mending their weapons or healing them, etc.

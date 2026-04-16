@@ -3,10 +3,8 @@
 #include "creature.h"
 
 // declare creature function
-class Boogeyman : public Creature {
-public:
-    Boogeyman();
-};
+
+Creature.makeBoogeyman();
 
 
 #endif

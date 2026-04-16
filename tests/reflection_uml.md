@@ -11,3 +11,7 @@ I learned how to use the assert function is c++, it is pretty handy for terminat
 
 # UML:
 ![alt text](Arena_Creature_UML.png "UML")
+
+# Compiling command:
+Be sure to run this in Arena259/tests/
+    g++ ezra_test.cpp ../src/creature.h -o test1

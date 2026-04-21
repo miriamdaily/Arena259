@@ -26,8 +26,8 @@ void CreatureVariablesTest() {
 	assert(Creature2.health == 1); 
 	assert(Creature2.damage == 1);
 
-	//assert(Creature3.health == 0); // require negative health in constructor to set it 0
-	//assert(Creature3.damage == 0);
+	assert(Creature3.health == 0); // require negative health in constructor to set it 0
+	assert(Creature3.damage == 0);
 }
 
 // Test out attacking creatures

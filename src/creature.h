@@ -10,29 +10,56 @@ const int MAX_HEALTH = 120;
 
 class Creature
 {
-public:
-    std::string name;
-    int health;
-    int damage;
+private:
+const std::string name; //make data private
+const int damage;
+int health;
 
-    Creature(std::string n, int h, int d)
+public:
+    inline static int creatureCount = 0; // this is a static member to keep track of the number of creatures created
+
+    Creature(const std::string n, int h, const int d) : name(n), damage(d), health(h)
     {
-        name = n;
-        health = h;
-        damage = d;
+        ++creatureCount; // increment creature count whenever a new creature is created
+    }
+    std::string getName() const { // add accessor methods 
+        return name;
+    }
+    static int getCreatureCount() // add static method to access creature count
+    {
+        return creatureCount; // return the current count of creatures created
+    }
+    int getHealth() const {
+        return health;
+    }
+    int getDamage() const {
+        return damage;
     }
 
-    void attack(Creature &other)
+    void takeDamage(int amount) // add takeDamage method
     {
-
-        other.health -= damage;
-        if (other.health < 0)
+        health -= amount;
+        if (health < 0)
         {
-            other.health = 0;
+            health = 0;
         }
     }
 
-    bool isAlive()
+    void heal(int amount) // add healing so a creature can recover without exceeding the balance cap
+    {
+        health += amount;
+        if (health > MAX_HEALTH)
+        {
+            health = MAX_HEALTH;
+        }
+    }
+
+    void attack(Creature &other) // add attack method
+    {
+        other.takeDamage(damage);
+    }
+
+    bool isAlive() const // add isAlive method
     {
         return health > 0;
     }

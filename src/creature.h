@@ -69,3 +69,10 @@ public:
 };
 
 #endif
+
+//what is the class name? Creature
+// what data does every creature have? name(string), health(int), damage(int)
+// Why are name, health, and damage marked protected instead of private? Because we want derived classes to be able to access and modify these variables directly, while still keeping them hidden from outside code that uses the Creature class
+// which functions allow us to read the creature's data? getName(), getHealth(), getDamage()
+// virtual void specialMove(Creature &other); // what does this do? it allows derived classes to implement their own special move that can be used in battle, and it can be called on a Creature reference or pointer without knowing the specific type of creature
+// why might different creatures need different versions of specialMove()? because different creatures might have different abilities or attacks that they can use in battle, so they would need to implement their own version of specialMove() to show that
